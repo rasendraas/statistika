@@ -2,7 +2,7 @@
 Nama : Rasendra Akbar Satyatama
 NRP : 5003221120
 @file : 
-@brief : Revisi
+@brief : Remedial No 2, Program matriks Euclidian
 @date : 13/06/2023
 ************************************/
 

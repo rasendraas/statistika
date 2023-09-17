@@ -1,3 +1,11 @@
+/************************************
+Nama : Rasendra Akbar S
+NRP : 5003221120
+@file : 
+@brief : 
+@date : 13/06/2023
+************************************/
+
 #include <iostream>
 #include <math.h>
 
