@@ -1,13 +1,14 @@
-# Population Mean with Known Variance
+# Test of Population Proportion
 
 # Pilihan
-# 1. Lower Tail (H1: Miu < Xbar) 
-# 2. Upper Tail (H1: Miu > Xbar)
-# 3. Two-tailed (H1: Miu tidak sama dengan Xbar)
+# 1. Lower Tail (H1: p < p0) 
+# 2. Upper Tail (H1: p > p0)
+# 3. Two-tailed (H1: p tidak sama dengan p0)
 
-Uji_Rata_Populasi = function(keputusan, xbar, miu0, sigma, alpha, n){
+Uji_Proporsi_Populasi = function(keputusan, samples_taken, p0, alpha, n){
   
-  z = (xbar - miu0) / (sigma/sqrt(n))
+  pbar = samples_taken/n
+  z = (pbar-p0)/(sqrt(p0*(1-p0)/n))
   
   if (keputusan == 1){
     pval = pnorm(z)
@@ -68,4 +69,4 @@ Uji_Rata_Populasi = function(keputusan, xbar, miu0, sigma, alpha, n){
   }
 }
 
-Uji_Rata_Populasi(2, 2.1, 2, 0.25, 0.05, 35)
+Uji_Proporsi_Populasi(1, 12, 0.5, 0.05, 20)

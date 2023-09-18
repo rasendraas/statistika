@@ -11,15 +11,15 @@ Uji_Rata_Populasi = function(keputusan, xbar, miu0, sigma, alpha, n){
   
   if (keputusan == 1){
     pval = pt(t, df=n-1)
-    t.alpha = qt(1-alpha, df=n-1)
+    t.alpha = qt(alpha, df=n-1)
     
-    if (t <= -t.alpha){
+    if (t <= t.alpha){
       cat ("t =",t,"\n")
-      cat ("t-table =",-t.alpha,"\n")
+      cat ("t-table =",t.alpha,"\n")
       print("Tolak H0")
     } else {
       cat ("t = ",t,"\n")
-      cat ("t-table = ",-t.alpha,"\n")
+      cat ("t-table = ",t.alpha,"\n")
       print("Gagal tolak H0")
     }
     cat ("P-Value =",pval,"\n")
@@ -42,16 +42,25 @@ Uji_Rata_Populasi = function(keputusan, xbar, miu0, sigma, alpha, n){
     cat ("Alpha =",alpha,"\n")
     
   } else{
-    pval = 2*pt(t, df=n-1)
-    t.alpha = qt(1-alpha/2, df=n-1)
     
-    if (t <= -t.alpha || abs(t) >= t.alpha){
+    t.alpha.kiri = qt(alpha/2, df=n-1)
+    t.alpha.kanan = qt(1-alpha/2, df=n-1)
+    
+    if (t<t.alpha.kiri){
+      pval = 2*pt(t, df=n-1)
+    } else if (t>t.alpha.kiri && t<t.alpha.kanan){
+      pval = 2*pt(t, df=n-1)
+    } else{
+      pval = 2*pt(t, df=n-1, lower.tail=FALSE)
+    }
+    
+    if (t <= t.alpha.kiri || t >= t.alpha.kanan){
       cat ("t =",t,"\n")
-      cat ("t-table =",-t.alpha,t.alpha,"\n")
+      cat ("t-table =",t.alpha.kiri,t.alpha.kanan,"\n")
       print("Tolak H0")
     } else {
       cat ("t =",t,"\n")
-      cat ("Z-table =",-t.alpha,t.alpha,"\n")
+      cat ("t-table =",t.alpha.kiri,t.alpha.kanan,"\n")
       print("Gagal tolak H0")
     }
     cat ("P-Value =",pval,"\n")
