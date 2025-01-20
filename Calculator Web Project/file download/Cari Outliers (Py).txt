@@ -1,0 +1,17 @@
+def cari_outlier(data):
+    kuartil1 = np.percentile(data, 25)
+    kuartil3 = np.percentile(data, 75)
+    interquartile = kuartil3 - kuartil1
+    list_outlier = []
+    for i in range(len(data)):
+        if (data[i] < kuartil1 - 1.5*interquartile) or (data[i] > kuartil3 + 1.5*interquartile):
+            list_outlier.append(data[i])
+    print(list_outlier)
+    if len(list_outlier) == 0:
+        print("Tidak ada outlier")
+    print ("Q1 = ",kuartil1)
+    print ("Q3 = ",kuartil3)
+    print ("IQR = ",interquartile)
+
+test = [12, 15, 18,-2100, 20, 14, 22, 1000, 28, 30, 25, 40]
+cari_outlier(test)

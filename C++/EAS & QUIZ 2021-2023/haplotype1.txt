@@ -1,0 +1,14 @@
+3 Sequences yang mirip dengan Seq SRX5 = 
+SRX5 = ACT-AAGGGTCAATTTCTGTCTCAAAAGGGTCAGTTACTG
+---------------------------------------------------
+Yang termirip pertama dengan SRX5 dilihat dari skor similairty :
+Skor = 29.4
+Dengan DNA Sequence : TCTTACTG-CCAATTTCTGTTTCAGCAGGGTCAGTTTCTG
+
+Yang termirip kedua dengan SRX5 dilihat dari skor similairty :
+Skor = 28.4
+Dengan DNA Sequence : ACTTAACTGTCAATTTCTGTTTCACGATGCGAAGTTT-TG
+
+Yang termirip ketiga dengan SRX5 dilihat dari skor similairty :
+Skor = 26.9
+Dengan DNA Sequence : ACTTTGGGTCAATTTCTGGTTTTAAAAGGGTCAGTTACTT

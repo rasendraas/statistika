@@ -1,0 +1,206 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url("assets/BACKGROUND BODY.png");
+}
+header {
+    background-color: #192535;
+    color: white;
+    text-align: left;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .navbar-brand {
+    color: white;
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.2em;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+header img {
+    height: 60px;
+    margin-right: 10px;
+}
+header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    margin: 0;
+    letter-spacing: 0.2em;
+    transform: translateX(-13%)
+}
+.back-button {
+    background-color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 20px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    transform: translate(110px, -55px); 
+}
+.back-button:hover {
+    background-color: #192535;
+    color: white;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.input-container {
+    width: 400px;
+    position: absolute;
+    top: 235px;
+    left: 130px;
+    text-align: center; /* Pusatkan teks */
+}
+
+.input-label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    letter-spacing: 0.2em;
+    position: absolute;
+    top: -42px; /* Sesuaikan posisi */
+    left: 230px; /* Sesuaikan posisi */
+}
+
+textarea {
+    width: 580px;
+    height: 144px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #08254F;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.calculate-button {
+    background-color: #192535;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    position: absolute;
+    top: 397px;
+    left: 600px;
+}
+
+.calculate-button:hover {
+    background-color: white;
+    color: #192535;
+}
+
+.output-table {
+    display: flex;
+    flex-direction: column;
+}
+
+.output-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.output-label {
+    font-weight: medium;
+    margin-right: 10px;
+}
+
+/* ... (CSS yang sudah ada) ... */
+
+.main-container {
+    display: flex;
+    margin: 20px;
+}
+
+.input-container {
+    width: 39%;
+    text-align: center;
+}
+
+.result-container {
+    width: 39%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 200px;
+    left: 750px;
+    border: 2px solid #192535; /* Tambahkan border sesuai kebutuhan */
+    padding: 15px; /* Sesuaikan padding sesuai kebutuhan */
+    box-sizing: border-box;
+}
+.result-container h2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px; /* Sesuaikan ukuran font sesuai kebutuhan */
+    color: #192535;
+    margin-bottom: 10px; /* Sesuaikan margin-bottom sesuai kebutuhan */
+    letter-spacing: 0.2em;
+}
+
+.output-table td {
+    border: 1.5px solid #192535;
+    padding: 8px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.output-table .output-label {
+    font-weight: light;
+    text-align: center;
+    width: 300px; /* Sesuaikan lebar sesuai kebutuhan */
+}
+
+.output-table td:nth-child(2) {
+    width: 300px; /* Sesuaikan lebar sesuai kebutuhan */
+}
+footer {
+    background-color: #192535;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    bottom: -10%;
+    width: 100%;
+}
+.footer-button {
+    background-color: white;
+    color: #192535;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    margin-right: 40px;
+}
+
+.footer-button:hover {
+    background-color: #192535;
+    color: white;
+}

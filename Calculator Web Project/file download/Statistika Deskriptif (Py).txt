@@ -1,0 +1,58 @@
+import pandas as pd
+import numpy as np
+from scipy.stats import mode
+
+def statdes(data,pilihan):
+    if pilihan == 'Sampel':
+        n = len(data)
+        mean = np.mean(data)
+        median = np.median(data)
+        if mode(data)[1] > 1:
+            mode_value = mode(data)[0]
+        else:
+            mode_value = "-"
+        max_value = np.max(data)
+        min_value = np.min(data)
+        q1 = np.percentile(data, 25)
+        q3 = np.percentile(data, 75)
+        std_dev = np.std(data, ddof = 1)
+        variance = np.var(data, ddof = 1)
+        mean_abs_deviation = np.mean(np.abs(data - mean))
+        cv = (std_dev / mean)
+        skewness = (n/((n-1)*(n-2)))*np.sum(((data-mean)/std_dev)**3)
+        kurtosis = ((n*(n+1))/((n-1)*(n-2)*(n-3)))*np.sum(((data-mean)/std_dev)**4)
+    else:
+        n = len(data)
+        mean = np.mean(data)
+        median = np.median(data)
+        if mode(data)[1] > 1:
+            mode_value = mode(data)[0]
+        else:
+            mode_value = "-"
+        max_value = np.max(data)
+        min_value = np.min(data)
+        q1 = np.percentile(data, 25)
+        q3 = np.percentile(data, 75)
+        std_dev = np.std(data)
+        variance = np.var(data)
+        mean_abs_deviation = np.mean(np.abs(data - mean))
+        cv = (std_dev / mean)
+        skewness = np.sum((data-mean)**3)/(n*(std_dev**3))
+        kurtosis = np.sum((data-mean)**4)/(n*(std_dev**4))
+    print("Banyak Data:", n)
+    print("Mean:", mean)
+    print("Median:", median)
+    print("Modus:", mode_value)
+    print("Maksimum:", max_value)
+    print("Minimum:", min_value)
+    print("Q1:", q1)
+    print("Q3:", q3)
+    print("Standar Deviasi:", std_dev)
+    print("Varians:", variance)
+    print("Simpangan Rata-rata (SR):", mean_abs_deviation)
+    print("Koefisien Variasi (CV):", cv)
+    print("Kemencengan (Skewness):", skewness)
+    print("Keruncingan (Kurtosis):", kurtosis)
+
+d = np.array([11, 23, 29, 80.5, 100, 123])
+statdes(d, "Sampel")

@@ -1,0 +1,41 @@
+def korelasi (data1, data2):
+    def rata2(data):
+        hasil = 0
+        for i in range (len(data)):
+            hasil += data[i]
+        hasil /= len(data)
+        return hasil
+    def standardeviasi(data):
+        hasil_std = 0
+        for i in range(len(data)):
+            hasil_std += (data[i] - rata2(data))**2
+        hasil_std = hasil_std**0.5
+        return hasil_std
+    def standardeviasi_xy(data1, data2):
+        hasil_stdxy = 0
+        for i in range(len(data1)):
+            hasil_stdxy += (data1[i]-rata2(data1))*(data2[i]-rata2(data2))
+        return hasil_stdxy
+
+    hasil_korelasi = standardeviasi_xy(data1, data2)/(standardeviasi(data1)*standardeviasi(data2))
+    return hasil_korelasi
+
+import numpy as np
+coba1 = [25, 30, 35, 40, 28, 22, 15, 18, 25, 32]
+coba2 = [18, 22, 16, 20, 24, 30, 28, 25, 26, 35]
+coba3 = [12, 15, 18, 20, 14, 22, 28, 30, 25, 40]
+coba4 = [32, 28, 25, 30, 35, 18, 20, 24, 22, 15]
+coba5 = [22, 24, 28, 30, 26, 40, 35, 18, 20, 24]
+c = np.column_stack((coba1,coba2,coba3,coba4,coba5))
+kolom = c.shape[1]
+
+matriks_korelasi = np.zeros((kolom,kolom))
+
+for i in range(kolom):
+    for j in range(kolom):
+        if i==j:
+            matriks_korelasi[i,j] = 1
+        else:
+            matriks_korelasi[i,j] = korelasi(c[:,i],c[:,j])
+
+print(matriks_korelasi)

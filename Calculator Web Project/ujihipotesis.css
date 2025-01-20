@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #C8CBD0;
+}
+header {
+    background-color: #192535;
+    color: white;
+    text-align: left; /* Logo dan teks Antares di sebelah kiri */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between; /* Menempatkan elemen di sisi yang berlawanan */
+    align-items: center; /* Memastikan elemen berada pada satu garis vertikal */
+}
+header .navbar-brand {
+    color: white;
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.2em;
+    font-size: 16px;
+    display: flex;
+    align-items: center; /* Memastikan logo dan teks berada pada satu garis vertikal */
+}
+header img {
+    height: 60px;
+    margin-right: 10px;
+}
+header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    margin: 0; /* Menghilangkan margin pada teks */
+    letter-spacing: 0.2em;
+    transform: translateX(-13%)
+}
+.back-button {
+    background-color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 20px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500; /* Medium */
+    font-size: 12px; /* Ukuran font 12 */
+    transform: translateX(20%);
+}
+.back-button:hover {
+    background-color: #192535;
+    color: white;
+}
+.back-button {
+    background-color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 20px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500; /* Medium */
+    font-size: 12px; /* Ukuran font 12 */
+    transform: translateX(20%);
+}

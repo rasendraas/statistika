@@ -59,27 +59,32 @@ int main(){
 	float data_genap[n], data_ganjil[n], data_prima[n];
 	int jml_gen = 0, jml_gan = 0, jml_p = 0;
 	
-	for(int i=0; i<n; i++){
-		if(data[i]%2 == 0){
-			data_genap[jml_gen] = data[i];
+	for (int i = 0; i < n; ++i) {
+        if (data[i] % 2 == 0) {
+            // Memasukkan ke array genap
+            data_genap[jml_gen] = data[i];
 			jml_gen++;
-		}
-		else if(data[i]%2 != 0){
-			
-			if(data[i]==2 || data[i]==3 || data[i]==5 || data[i]==7){
-				data_prima[jml_p] = data[i];
+        } else {
+            // Memasukkan ke array ganjil bukan prima atau prima
+            bool is_prima = true;
+            for (int j = 2; j < data[i]; ++j) {
+                if (data[i] % j == 0) {
+                    // Bukan prima
+                    is_prima = false;
+                    break;
+                }
+            }
+            if (is_prima) {
+                // Prima
+                data_prima[jml_p] = data[i];
 				jml_p++;
-			}
-			else if(data[i]%2 == 0 || data[i]%3 == 0 || data[i]%5 == 0 || data[i]%7 == 0){
-				data_ganjil[jml_gan] = data[i];
+            } else {
+                // Ganjil bukan prima
+                data_ganjil[jml_gan] = data[i];
 				jml_gan++;
-			}
-			else{ // Bil. prima selain 2 3 5 7
-				data_prima[jml_p] = data[i];
-				jml_p++;
-			}	
-		}
-	}	
+            }
+        }
+    }
 	
 	cout<<endl<<endl;
 	cout<<"2b. Hasil Filter Data"<<endl;

@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url("assets/BACKGROUND BODY.png");
+}
+
+header {
+    background-image: url("assets/BACKGORUND HEADER.png");
+    background-size: cover;
+    background-position: center;
+    height: 401px;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+}
+
+header .navbar-brand {
+    color: white;
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    top: 31px;
+    left: 177px;
+    letter-spacing: 0.2em;
+    font-size: 20px;
+}
+
+header img {
+    margin-bottom: 10px;
+}
+
+/* Tulisan #AntaresNgitung */
+.antares-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    letter-spacing: 0.1em;
+    align-items: center;
+    color: white;
+    transform: translateY(110%);
+}
+
+/* Tulisan KALKULATOR STATISTIKA */
+.kalkulator-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 40px;
+    letter-spacing: 0.1em;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 10px;
+    margin-top: 0px;
+    transform: translateY(50%);
+}
+.button-container {
+    text-align: center;
+    margin-top: 100px;
+}
+.silakan-pilih-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+.kotak-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+}
+.kotak-pilihan {
+    width: 154px;
+    height: 140px;
+    background-color: #f2f2f2;
+    border-radius: 15px;
+    margin: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+.kotak-pilihan a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+.kotak-pilihan img {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    transform: translateY(5%);
+}
+
+.kotak-pilihan:hover {
+    background-color: #3B4655;
+}
+.keterangan {
+    color: #08254F;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    transform: translateY(15%);
+}
+footer {
+    background-color: #192535;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

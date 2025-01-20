@@ -1,0 +1,60 @@
+Modus <- function(x) {
+  tbl <- table(x)
+  mode_value <- as.numeric(names(tbl[tbl == max(tbl)]))
+  if (length(mode_value) > 1) {
+    mode_value <- "-"
+  }
+  return(mode_value)
+}
+
+statdes <- function(data, pilihan) {
+  if (pilihan == 'Sampel') {
+    n <- length(data)
+    mean_value <- mean(data)
+    median_value <- median(data)
+    mode_value <- Modus(data)
+    max_value <- max(data)
+    min_value <- min(data)
+    q1 <- quantile(data, 0.25)
+    q3 <- quantile(data, 0.75)
+    std_dev <- sd(data)
+    variance <- var(data)
+    mean_abs_deviation <- mean(abs(data - mean_value))
+    cv <- (std_dev / mean_value)
+    skewness <- (n/((n-1)*(n-2))) * sum(((data-mean_value)/std_dev)^3)
+    kurtosis <- ((n*(n+1))/((n-1)*(n-2)*(n-3))) * sum(((data-mean_value)/std_dev)^4)
+  } else {
+    n <- length(data)
+    mean_value <- mean(data)
+    median_value <- median(data)
+    mode_value <- Modus(data)
+    max_value <- max(data)
+    min_value <- min(data)
+    q1 <- quantile(data, 0.25)
+    q3 <- quantile(data, 0.75)
+    std_dev <- sd(data)
+    variance <- var(data)
+    mean_abs_deviation <- mean(abs(data - mean_value))
+    cv <- (std_dev / mean_value)
+    skewness <- sum((data-mean_value)^3)/(n*(std_dev^3))
+    kurtosis <- sum((data-mean_value)^4)/(n*(std_dev^4))
+  }
+  
+  cat("Banyak Data:", n, "\n")
+  cat("Mean:", mean_value, "\n")
+  cat("Median:", median_value, "\n")
+  cat("Modus:", mode_value, "\n")
+  cat("Maksimum:", max_value, "\n")
+  cat("Minimum:", min_value, "\n")
+  cat("Q1:", q1, "\n")
+  cat("Q3:", q3, "\n")
+  cat("Standar Deviasi:", std_dev, "\n")
+  cat("Varians:", variance, "\n")
+  cat("Simpangan Rata-rata (SR):", mean_abs_deviation, "\n")
+  cat("Koefisien Variasi (CV):", cv, "\n")
+  cat("Kemencengan (Skewness):", skewness, "\n")
+  cat("Keruncingan (Kurtosis):", kurtosis, "\n")
+}
+
+d <- c(11, 23, 29, 80.5, 100, 123)
+statdes(d, "Sampel")

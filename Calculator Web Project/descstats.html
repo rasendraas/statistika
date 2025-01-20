@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="icon" href="assets/LOGO.png" type="image/png">
+        <link rel="stylesheet" href="descstats.css">
+        <title>Statistika Deskriptif</title>
+    </head>
+    <body>
+        <header>
+            <div class="navbar-brand">
+                <img src="assets/LOGO.png" alt="Logo Antares">
+                <h1>ANTARES</h1>
+            </div>
+            <h1>STATISTIKA DESKRIPTIF</h1>
+        </header>
+        <div class="main-container">
+            <div class="input-container">
+                <h2>INPUT</h2>
+                <textarea placeholder="Masukkan data ... (format : 23, 11, 20.5, 74, 52, 24.2)" id="dataInput"></textarea>
+            </div>
+        </div>
+        <div class="option-container">
+            <label for="option">Pilih jenis data :</label>
+            <select id="option" name="option">
+                <option value="sample">Sampel</option>
+                <option value="population">Populasi</option>
+            </select>
+        </div>
+        <button class="calculate-button" onclick="hitung()">Hitung</button>
+
+        <!-- Tabel untuk Menampilkan Hasil -->
+        <div class="result-container">
+            <h2>OUTPUT</h2>
+            <table class="output-table">
+                <tr>
+                    <td class="output-label">Banyak Data (n)</td>
+                    <td id="nOutput"></td>
+                </tr>
+                <tr>
+                    <td class="output-label">Mean</td>
+                    <td id="meanOutput"></td>
+                </tr>
+                <tr>
+                    <td class="output-label">Median</td>
+                    <td id="medianOutput"></td>
+                </tr>
+                <tr>
+                    <td class="output-label">Modus</td>
+                    <td id="modeOutput"></td>
+                </tr>
+                <tr>
+                    <td class="output-label">Maksimum</td>
+                    <td id="maxOutput"></td>
+                </tr>
+                <tr>
+                    <td class="output-label">Minimum</td>
+                    <td id="minOutput"></td>
+                </tr>
+                <tr>
+                    <td class="output-label">Kuartil Pertama (Q1)</td>
+                    <td id="q1Output"></td>
+                </tr>
+                <tr>
+                    <td class="output-label">Kuartil Ketiga (Q3)</td>
+                    <td id="q3Output"></td>
+                </tr>
+                <tr>
+                    <td class="output-label">Standar Deviasi</td>
+                    <td id="stdDevOutput"></td>
+                </tr>
+                <tr>
+                    <td class="output-label">Varians</td>
+                    <td id="varianceOutput"></td>
+                </tr>
+                <tr>
+                    <td class="output-label">Simpangan Rata-rata</td>
+                    <td id="madOutput"></td>
+                </tr>
+                <tr>
+                    <td class="output-label">Koefisien Variasi (CV)</td>
+                    <td id="cvOutput"></td>
+                </tr>
+                <tr>
+                    <td class="output-label">Kemencengan/Skewness (γ1)</td>
+                    <td id="skewnessOutput"></td>
+                </tr>
+                <tr>
+                    <td class="output-label">Kerucingan/Kurtosis (β2)</td>
+                    <td id="kurtosisOutput"></td>
+                </tr>
+            </table>
+        </div>
+        <button class="back-button" onclick="window.location.href='main.html'">Kembali</button>
+        <footer>
+            <button class="footer-button" onclick="downloadSyntaxPy()">Download Syntax Python</button>
+            <button class="footer-button" onclick="downloadSyntaxR()">Download Syntax R</button>
+        </footer>
+        <script src="statdes.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.1.0/math.min.js"></script>
+    </body>
+</html>

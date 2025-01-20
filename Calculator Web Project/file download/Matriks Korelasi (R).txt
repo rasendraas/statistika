@@ -1,0 +1,38 @@
+rata2 <- function(data) {
+  return(mean(data))
+}
+
+standardeviasi <- function(data) {
+  return(sqrt(sum((data - rata2(data))^2) / length(data)))
+}
+
+standardeviasi_xy <- function(data1, data2) {
+  return(sum((data1 - rata2(data1)) * (data2 - rata2(data2))))
+}
+
+korelasi <- function(data1, data2) {
+  return(standardeviasi_xy(data1, data2) / (standardeviasi(data1) * standardeviasi(data2)))
+}
+
+coba1 <- c(25, 30, 35, 40, 28, 22, 15, 18, 25, 32)
+coba2 <- c(18, 22, 16, 20, 24, 30, 28, 25, 26, 35)
+coba3 <- c(12, 15, 18, 20, 14, 22, 28, 30, 25, 40)
+coba4 <- c(32, 28, 25, 30, 35, 18, 20, 24, 22, 15)
+coba5 <- c(22, 24, 28, 30, 26, 40, 35, 18, 20, 24)
+
+c <- cbind(coba1, coba2, coba3, coba4, coba5)
+kolom <- ncol(c)
+
+matriks_korelasi <- matrix(0, nrow = kolom, ncol = kolom)
+
+for (i in 1:kolom) {
+  for (j in 1:kolom) {
+    if (i == j) {
+      matriks_korelasi[i, j] <- 1
+    } else {
+      matriks_korelasi[i, j] <- korelasi(c[, i], c[, j])
+    }
+  }
+}
+
+print(matriks_korelasi)
