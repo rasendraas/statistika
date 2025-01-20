@@ -1,0 +1,12 @@
+name: BNI_App_Sentiment
+title: BNI_App_Sentiment
+username: rasendraas
+account: rasendraas
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 13714080
+bundleId: 9656059
+url: https://rasendraas.shinyapps.io/BNI_App_Sentiment/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
